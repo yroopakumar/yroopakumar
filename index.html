@@ -20,13 +20,14 @@
 			  <h3 id="city"> </h3>
 				  <select class="custom-select custom-select-lg mb-3" id="sel_cities" onchange="cityChanged()">
 				  </select>
-		    </div>
+		   
 
 		    <div class="container" style="padding: 2em;">
 		      <div class="card-deck mb-3 text-center" id="div_weather" >
+
 		      </div>
 		    </div>
-
+ </div>
 	</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -106,8 +107,8 @@
 							+"<h5 class='card-title pricing-card-title'>"+value.main.temp+" <small class='text-muted'> celsius</small></h5>"
 							+"<img src='https://openweathermap.org/img/w/"+value.weather[0].icon+".png' alt='"+value.weather[0].description+"' title='"+value.weather[0].description+"'></img>"
 							+"<ul class='list-unstyled mt-3 mb-4'>"
-							+"<li><strong>Max : </strong>" + value.main.temp_max+ " </li>"
-							+"<li><strong>Min : </strong>" + value.main.temp_min + " </li>"
+							+"<li ><strong>Max : </strong><small><b>" + value.main.temp_max+ "</b></small></li>"
+							+"<li><strong>Min : </strong><small><b>" + value.main.temp_min + "</b></small> </li>"
 							// +"<li>" + value.main.humidity+ " Humidity</li>"
 							// +"<li>" + value.main.pressure+ " Pressure</li>"
 							+"</ul>"
