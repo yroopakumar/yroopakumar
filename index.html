@@ -107,7 +107,7 @@
 							+"</div>"
 							+"<div class='card-body'>"
 							+"<h5 class='card-title pricing-card-title'>"+value.main.temp+" <small class='text-muted'> celsius</small></h5>"
-							+"<img src='http://openweathermap.org/img/w/"+value.weather[0].icon+".png' alt='"+value.weather[0].description+"' title='"+value.weather[0].description+"'></img>"
+							+"<img src='https://openweathermap.org/img/w/"+value.weather[0].icon+".png' alt='"+value.weather[0].description+"' title='"+value.weather[0].description+"'></img>"
 							+"<ul class='list-unstyled mt-3 mb-4'>"
 							+"<li><strong>Max : </strong>" + value.main.temp_max+ " </li>"
 							+"<li><strong>Min : </strong>" + value.main.temp_min + " </li>"
@@ -134,7 +134,7 @@
 		
 		function getCities(){
 		
-			$.getJSON('https://raw.githubusercontent.com/yroopakumar/Weather-Forecast/master/current.city.list.json',function(data){
+			$.getJSON('https://raw.githubusercontent.com/yroopakumar.github.io/Weather-Forecast/master/current.city.list.json',function(data){
 			
 			data = jQuery.grep(data, function( a ) {
 			  return a.country=="IN";
