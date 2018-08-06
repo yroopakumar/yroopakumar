@@ -69,10 +69,10 @@
 		function loadWeather(cityId){
 			var key="be22248e27399bf8687078729acb5ae0";
 			if(cityId>0){
-			callAjaxJson("http://api.openweathermap.org/data/2.5/forecast?id="+cityId+"&APPID="+key+"&units=metric",null,test,test1);}
+			callAjaxJson("https://api.openweathermap.org/data/2.5/forecast?id="+cityId+"&APPID="+key+"&units=metric",null,test,test1);}
 			else{
 			var city="bangalore,IN";
-			callAjaxJson("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID="+key+"&units=metric",null,test,test1);
+			callAjaxJson("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID="+key+"&units=metric",null,test,test1);
 			}
 		}
 		function test(output){
@@ -133,20 +133,7 @@
 		};
 		
 		function getCities(){
-		<!-- $.ajax({ -->
-			  <!-- url: 'current.city.list.json', -->
-			  <!-- dataType: "json", -->
-			  <!-- success: function(data) { -->
-			  
-					<!-- console.log(data); -->
-					<!-- var output = '';   -->
-					<!-- $.each(data, function(key,val){ -->
-					  <!-- output += '<option value="'+ val.id+'">'+ val.name + " (" + val.country+ ')</option>'; -->
-					<!-- }); -->
-					
-					<!-- $('#sel_cities').html(output); -->
-			  <!-- } -->
-		<!-- }); -->
+		
 			$.getJSON('https://raw.githubusercontent.com/yroopakumar/Weather-Forecast/master/current.city.list.json',function(data){
 			
 			data = jQuery.grep(data, function( a ) {
