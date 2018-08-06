@@ -62,20 +62,17 @@
 				error: _errorhandler
 			});
 		}
-	   $( document ).ready(function() {
-		getCities();
-		loadWeather();
-		});
+	   
 		function loadWeather(cityId){
 			var key="be22248e27399bf8687078729acb5ae0";
 			if(cityId>0){
-			callAjaxJson("https://api.openweathermap.org/data/2.5/forecast?id="+cityId+"&APPID="+key+"&units=metric",null,test,test1);}
+			callAjaxJson("https://api.openweathermap.org/data/2.5/forecast?id="+cityId+"&APPID="+key+"&units=metric",null,successCall,errorCall);}
 			else{
 			var city="bangalore,IN";
-			callAjaxJson("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID="+key+"&units=metric",null,test,test1);
+			callAjaxJson("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID="+key+"&units=metric",null,successCall,errorCall);
 			}
 		}
-		function test(output){
+		function successCall(output){
 		if(output!=undefined && output.cod=="200"){
 			console.log(output.city,name + " "+ output.city.country);
 			$("#city").html(output.city.name + " "+ output.city.country);
@@ -128,7 +125,7 @@
 			
 		}
 		
-		function test1(output){
+		function errorCall(output){
 			alert(output.responseJSON.message);
 		};
 		
@@ -163,7 +160,10 @@
 		 var x = document.getElementById("sel_cities").value;
 		 loadWeather(x);
 		}
-
+		$( document ).ready(function() {
+			getCities();
+			loadWeather();
+		});
     </script>
   </body>
 </html>
